@@ -4,29 +4,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>math thing</title>
-        <script>
-        </script>
+        <script> src = 'index.js' </script>
     </head>
     <body>
         <h2>Calculator</h2>
         <textarea readonly></textarea><br>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>&#247;</button><br>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>x</button><br>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button><br>
-        <button>0</button>
-        <button>.</button>
-        <button>=</button>
-        <button>+</button><br>
-        <button>C</button>
+        <button id="data-number-7" onclick="numberClick('7')">7</button>
+        <button id="data-number-8" onclick="numberClick('8')">8</button>
+        <button id="data-number-9" onclick="numberClick('9')">9</button>
+        <button id="data-operation-division" onclick="doDivide()">&#247;</button><br>
+        <button id="data-number-4" onclick="numberClick('4')">4</button>
+        <button id="data-number-5" onclick="numberClick('5')">5</button>
+        <button id="data-number-6" onclick="numberClick('6')">6</button>
+        <button id="data-operation-multiply" onclick="doMultiply()">x</button><br>
+        <button id="data-number-1" onclick="numberClick('1')">1</button>
+        <button id="data-number-2" onclick="numberClick('2')">2</button>
+        <button id="data-number-3" onclick="numberClick('3')">3</button>
+        <button id="data-operation-minus" onclick="doMinus">-</button><br>
+        <button id="data-number-0" onclick="numberClick('0')">0</button>
+        <button id="data-number-decimal" onclick="decimalClick()">.</button>
+        <button id="data-equals" onclick="doEquals()">=</button>
+        <button id="data-operation-add" onclick="doAddition()">+</button><br>
+        <button id="data-all-clear" onclick="acClick()">AC</button>
 
     </body>
 </html>
