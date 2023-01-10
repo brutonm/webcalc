@@ -1,10 +1,18 @@
-let runningTotal = 0;
-let operand1 = 0;
-let operand2 = 0;
-let whatMathAreWeDoing = '';
-let doingSomeMath = false;
-let resetInput = false;
+const numberClick = (numberValue) => {
+    const whatTheNumberIs = document.getElementById('numberOutput').value;
+    if (whatTheNumberIs === '0') {
+        document.getElementById('numberOutput').value = numberValue; 
+    } else {
+        document.getElementById('numberOutput').value += numberValue; 
+    }
+};
+
 
 document.addEventListener('DOMContentLoaded', e => {
-	
+	document.getElementById('numberOutput').value = '0';
 });
+
+const acClick = () => {
+    document.getElementById('numberOutput').value = '0';
+};
+
