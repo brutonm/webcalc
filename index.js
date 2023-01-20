@@ -2,9 +2,6 @@ let firstNumber = 0;
 let operation = '';
 let overideSwitch = false;
 
-
-
-
 const numberClick = (numberValue) => {
     if (overideSwitch) {
         document.getElementById('numberOutput').value = numberValue;
@@ -18,7 +15,6 @@ const numberClick = (numberValue) => {
         }
     }
 };
-
 
 document.addEventListener('DOMContentLoaded', e => {
 	document.getElementById('numberOutput').value = '0';
@@ -69,16 +65,31 @@ const decimalClick = () => {
 
 const doEquals = () => {
     const secondNumber = Number(document.getElementById('numberOutput').value);
+    const hasDecimals = firstNumber.toString().includes('.') || secondNumber.toString().includes('.');
     let result = 0;
-    if (operation === 'plus') {
-        result = firstNumber + secondNumber;
-    } else if (operation === 'minus'){
-        result = firstNumber - secondNumber;
-    } else if (operation === 'times') {
-        result = firstNumber * secondNumber;
-    } else if (operation === 'divide') {
-        result = firstNumber / secondNumber;
+    
+    if (hasDecimals) {
+        if (operation === 'plus') {
+            result = bigDecimal.add(firstNumber, secondNumber);
+        } else if (operation === 'minus'){
+            result = bigDecimal.subtract(firstNumber, secondNumber);
+        } else if (operation === 'times') {
+            result = bigDecimal.multiply(firstNumber, secondNumber);
+        } else if (operation === 'divide') {
+            result = bigDecimal.divide(firstNumber, secondNumber);
+        }
+    } else {
+        if (operation === 'plus') {
+            result = firstNumber + secondNumber;
+        } else if (operation === 'minus'){
+            result = firstNumber - secondNumber;
+        } else if (operation === 'times') {
+            result = firstNumber * secondNumber;
+        } else if (operation === 'divide') {
+            result = firstNumber / secondNumber;
+        }
     }
+
     document.getElementById('numberOutput').value = result;
     firstNumber = result;
     overideSwitch = true;
